@@ -3,7 +3,6 @@ package br.com.leandropitta.contabilizar_api_java.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 @Entity

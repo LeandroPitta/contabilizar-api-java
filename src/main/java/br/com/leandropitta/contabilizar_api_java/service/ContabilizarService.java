@@ -1,14 +1,12 @@
 package br.com.leandropitta.contabilizar_api_java.service;
 
-import br.com.leandropitta.contabilizar_api_java.dto.request.ContabilizarRequestDto;
 import br.com.leandropitta.contabilizar_api_java.dto.response.ContabilizarResponseDto;
-import br.com.leandropitta.contabilizar_api_java.model.Contabilizar;
+import br.com.leandropitta.contabilizar_api_java.dto.response.UpdateStatusResponseDto;
 import br.com.leandropitta.contabilizar_api_java.repository.ContabilizarRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -32,9 +30,12 @@ public class ContabilizarService {
                 .map(contabilizar -> modelMapper.map(contabilizar, ContabilizarResponseDto.class));
     }
 
-    public void updateStatus(Integer id, String status, OffsetDateTime ultimoStatus) {
+    public UpdateStatusResponseDto updateStatus(Integer id, String status, OffsetDateTime ultimoStatus) {
         try {
             repository.updateContabilizarStatus(id, status, ultimoStatus);
+            return UpdateStatusResponseDto.builder()
+                    .message("Sucesso na atualização")
+                    .build();
         } catch (Exception e) {
             throw new RuntimeException("Erro ao atualizar o status no banco de dados", e);
         }

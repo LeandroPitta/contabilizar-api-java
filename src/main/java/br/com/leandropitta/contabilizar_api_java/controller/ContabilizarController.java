@@ -2,7 +2,7 @@ package br.com.leandropitta.contabilizar_api_java.controller;
 
 import br.com.leandropitta.contabilizar_api_java.dto.request.ContabilizarRequestDto;
 import br.com.leandropitta.contabilizar_api_java.dto.response.ContabilizarResponseDto;
-import br.com.leandropitta.contabilizar_api_java.model.Contabilizar;
+import br.com.leandropitta.contabilizar_api_java.dto.response.UpdateStatusResponseDto;
 import br.com.leandropitta.contabilizar_api_java.service.ContabilizarService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,7 @@ public class ContabilizarController {
     }
 
     @PutMapping("/{id}")
-    public void updateStatus(@PathVariable Integer id, @RequestBody ContabilizarRequestDto contabilizarDto) {
-        service.updateStatus(id, contabilizarDto.getStatus(), contabilizarDto.getUltimoStatus());
+    public UpdateStatusResponseDto updateStatus(@PathVariable Integer id, @RequestBody ContabilizarRequestDto contabilizarDto) {
+        return service.updateStatus(id, contabilizarDto.getStatus(), contabilizarDto.getUltimoStatus());
     }
 }
