@@ -8,9 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface HistoricoRepository extends JpaRepository<Historico, Long> {
-    List<Historico> findAllById(Long id);
+public interface HistoricoRepository extends JpaRepository<Historico, Integer> {
 
-    @Procedure(name = "insert_historico")
-    void insertHistorico(Long id, String historico, String funcionario);
+    List<Historico> findAllById(Integer id);
+
+    @Procedure("insert_historico")
+    void insertHistorico(Integer id, String historico, String funcionario);
 }

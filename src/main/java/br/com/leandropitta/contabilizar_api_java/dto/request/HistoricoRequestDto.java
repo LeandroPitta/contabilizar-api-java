@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HistoricoRequestDto {
-    private Long id;
+    private Integer id;
     private String historico;
     private String funcionario;
 }

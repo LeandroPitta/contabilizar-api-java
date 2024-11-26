@@ -11,7 +11,10 @@ import java.time.LocalDateTime;
 public class Historico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "historicoid")
+    private Integer historicoId;
+
+    private Integer id;
 
     private String historico;
 
