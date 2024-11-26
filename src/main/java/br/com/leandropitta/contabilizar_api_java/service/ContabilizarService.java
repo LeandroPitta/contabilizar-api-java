@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,12 +27,12 @@ public class ContabilizarService {
                 .collect(Collectors.toList());
     }
 
-    public Optional<ContabilizarResponseDto> findById(Long id) {
+    public Optional<ContabilizarResponseDto> findById(Integer id) {
         return repository.findById(id)
                 .map(contabilizar -> modelMapper.map(contabilizar, ContabilizarResponseDto.class));
     }
 
-    public void updateStatus(Long id, String status, LocalDateTime ultimoStatus) {
+    public void updateStatus(Integer id, String status, OffsetDateTime ultimoStatus) {
         try {
             repository.updateContabilizarStatus(id, status, ultimoStatus);
         } catch (Exception e) {

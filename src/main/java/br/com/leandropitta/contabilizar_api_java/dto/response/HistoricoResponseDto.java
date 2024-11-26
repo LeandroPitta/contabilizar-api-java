@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Builder
 @Data
@@ -14,6 +15,6 @@ import java.time.LocalDateTime;
 public class HistoricoResponseDto {
     private Integer id;
     private String historico;
-    private LocalDateTime dataHistorico;
+    private OffsetDateTime dataHistorico;
     private String funcionario;
 }

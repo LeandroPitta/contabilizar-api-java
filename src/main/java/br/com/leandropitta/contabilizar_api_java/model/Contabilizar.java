@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "contabilizar")
@@ -11,13 +12,13 @@ import java.time.LocalDateTime;
 public class Contabilizar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "dataefetiva")
-    private LocalDateTime dataEfetiva;
+    private OffsetDateTime dataEfetiva;
 
     @Column(name = "ultimostatus")
-    private LocalDateTime ultimoStatus;
+    private OffsetDateTime ultimoStatus;
 
     private Double credito;
 

@@ -23,12 +23,12 @@ public class ContabilizarController {
     }
 
     @GetMapping("/{id}")
-    public Optional<ContabilizarResponseDto> getById(@PathVariable Long id) {
+    public Optional<ContabilizarResponseDto> getById(@PathVariable Integer id) {
         return service.findById(id);
     }
 
     @PutMapping("/{id}")
-    public void updateStatus(@PathVariable Long id, @RequestBody ContabilizarRequestDto contabilizarDto) {
+    public void updateStatus(@PathVariable Integer id, @RequestBody ContabilizarRequestDto contabilizarDto) {
         service.updateStatus(id, contabilizarDto.getStatus(), contabilizarDto.getUltimoStatus());
     }
 }

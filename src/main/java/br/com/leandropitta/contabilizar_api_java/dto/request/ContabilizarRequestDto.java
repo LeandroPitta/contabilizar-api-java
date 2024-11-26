@@ -6,12 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ContabilizarRequestDto {
-    private LocalDateTime ultimoStatus;
+    private OffsetDateTime ultimoStatus;
     private String status;
 }

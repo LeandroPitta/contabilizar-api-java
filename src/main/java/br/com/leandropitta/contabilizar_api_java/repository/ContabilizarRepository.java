@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Repository
-public interface ContabilizarRepository extends JpaRepository<Contabilizar, Long> {
-    @Procedure(name = "update_contabilizar_status")
-    void updateContabilizarStatus(Long id, String status, LocalDateTime ultimoStatus);
+public interface ContabilizarRepository extends JpaRepository<Contabilizar, Integer> {
+    @Procedure("update_contabilizar_status")
+    void updateContabilizarStatus(Integer id, String status, OffsetDateTime ultimoStatus);
 }

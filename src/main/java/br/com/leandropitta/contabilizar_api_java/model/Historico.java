@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "historico")
@@ -19,7 +20,7 @@ public class Historico {
     private String historico;
 
     @Column(name = "datahistorico")
-    private LocalDateTime dataHistorico;
+    private OffsetDateTime dataHistorico;
 
     private String funcionario;
 }
