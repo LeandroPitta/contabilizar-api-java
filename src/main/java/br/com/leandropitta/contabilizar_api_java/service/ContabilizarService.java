@@ -5,6 +5,7 @@ import br.com.leandropitta.contabilizar_api_java.dto.response.UpdateStatusRespon
 import br.com.leandropitta.contabilizar_api_java.repository.ContabilizarRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
@@ -20,7 +21,7 @@ public class ContabilizarService {
     private ModelMapper modelMapper;
 
     public List<ContabilizarResponseDto> findAll() {
-        return repository.findAll().stream()
+        return repository.findAll(Sort.by("dataEfetiva").descending()).stream()
                 .map(contabilizar -> modelMapper.map(contabilizar, ContabilizarResponseDto.class))
                 .collect(Collectors.toList());
     }

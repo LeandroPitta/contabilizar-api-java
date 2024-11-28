@@ -8,6 +8,7 @@ import br.com.leandropitta.contabilizar_api_java.repository.HistoricoRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class HistoricoService {
     private ModelMapper modelMapper;
 
     public List<HistoricoResponseDto> findAllById(Integer id) {
-        List<Historico> historicos = repository.findAllById(id);
+        List<Historico> historicos = repository.findAllById(id, Sort.by("dataHistorico").descending());
         log.debug("Registros encontrados: {}", historicos);
 
         return historicos.stream()
