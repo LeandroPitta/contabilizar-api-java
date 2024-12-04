@@ -17,7 +17,7 @@ public class AppConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOriginPatterns("http://localhost:4200")
+                .allowedOriginPatterns("http://localhost:4200", "https://api-contabilizar.leandropitta.com.br")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
