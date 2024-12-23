@@ -37,21 +37,14 @@ The application uses PostgreSQL as the database management system. It stores all
      mvn install
      ```
 2. **Environment Variables** (Optional): 
-   - Copy the [`src/main/resources/application.properties`](src/main/resources/application.properties) file and configure your database connection.
+   - Copy the `application.properties` file and configure your database connection.
 3. **Database Setup** (Optional): 
    - Ensure that PostgreSQL is running and properly configured.
    - *Note: Steps 2 and 3 are not mandatory if you choose to use the pre-configured database.*
-4. **Build WAR File**: 
+4. **Start Backend**: 
    ```bash
-   mvn package
-5. **Deploy to JBoss/WildFly**:
-   - Copy the generated `war` file from the `target` directory to the `standalone/deployments` directory of your JBoss/WildFly server.
-6. **Start JBoss/WildFly**:
-   - Navigate to the JBoss/WildFly `bin` directory and run:
-     ```bash
-     standalone.bat (for Windows)
-     ./standalone.sh (for Linux/Mac)
-     ```
+   mvn spring-boot:run
+   ```
 
 ## Help
 For more help, refer to:
