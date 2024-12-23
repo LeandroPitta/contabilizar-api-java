@@ -18,6 +18,14 @@ Key components:
 
 The application uses PostgreSQL as the database management system. It stores all the contract data, including user information, transactions, contracts, and categories. The database schema is designed to ensure data integrity and efficient querying.
 
+## Frontend API
+
+The frontend API for this project is hosted separately. You can find the backend API repository at [contabilizar](https://github.com/LeandroPitta/contabilizar).
+
+## Production Environment
+
+The application runs in production at [contabilizar.leandropitta.com.br](https://contabilizar.leandropitta.com.br).
+
 ## Tech Stack
 
 <img alt="My Skills" src="https://skillicons.dev/icons?i=java,spring,postgres">
