@@ -1,0 +1,15 @@
+{
+    "name": "Ubuntu + Java + Maven",
+    "dockerFile": "Dockerfile",
+    "appPort": [8080],
+    "forwardPorts": [8080],
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "postCreateCommand": "mvn --version",
+    "extensions": [
+      "vscjava.vscode-java-pack",
+      "ms-azuretools.vscode-docker"
+    ]
+  }
+  
